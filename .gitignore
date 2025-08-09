@@ -1,0 +1,23 @@
+# Created files
+fyp23-dataset-source/
+fyp23-dataset/
+ltjx-dataset-source/
+ltjx-dataset/
+casia-dataset-source/
+casia-dataset/
+zhuojg-dataset-source/
+zhuojg-dataset/
+neumason-dataset-source/
+neumason-dataset/
+
+# Auxiliary files
+outputs/
+test_outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VSCode
+.vscode/

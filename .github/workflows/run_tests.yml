@@ -1,0 +1,25 @@
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: font-datasets-fyp24
+          environment-file: environment.yml
+          python-version: 3.13
+          auto-activate-base: false
+      - name: List Conda packages
+        run: conda list
+      - name: Run Tests
+        run: |
+          pytest tests/ -v
