@@ -21,5 +21,4 @@ jobs:
       - name: List Conda packages
         run: conda list
       - name: Run Tests
-        run: |
-          pytest tests/ -v
+        run: pytest tests/ -v
