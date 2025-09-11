@@ -15,3 +15,6 @@
 *.pt binary
 *.pth binary
 *.ttf binary
+
+# Large files managed by Git LFS
+*.zip filter=lfs diff=lfs merge=lfs -text
