@@ -10,4 +10,4 @@ chmod 777 fyp23-dataset
 # Coming soon
 
 # Create content and target images
-python scripts/fyp23/step_0_create_content_and_target_images.py
+python -m scripts.fyp23.step_0_create_content_and_target_images

@@ -200,7 +200,7 @@ def create_content_images_from_target_images(
 def main():
     content_image_dir = "xxx-dataset/ContentImage"
     target_image_dir = "xxx-dataset/TargetImage"
-    font_dir = "ttf/SourceHanSansSC-VF.ttf"
+    font_dir = "ttf/SourceHanSerifTC-VF.ttf"
     image_size = (128, 128)
     font_size = 100
 

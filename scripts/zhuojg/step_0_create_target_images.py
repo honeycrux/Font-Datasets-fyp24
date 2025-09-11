@@ -1,7 +1,7 @@
 # This script processes the zhuojg dataset
 
 # Dataset format:
-# zhuojg-dataset-source/
+# zhuojg-dataset-source/chinese-calligraphy-dataset-with-calligrapher/
 # ├── font1
 # │   ├── char1
 # │   │   ├── image1.gif
@@ -152,7 +152,7 @@ def create_target_images(source_dir: str | Path, output_target_image_dir: str | 
 
 def main():
     # Input and output directory paths
-    source_dir = "zhuojg-dataset-source/"  # Change this to your actual input directory
+    source_dir = "zhuojg-dataset-source/chinese-calligraphy-dataset-with-calligrapher/"  # Change this to your actual input directory
     output_target_image_dir = (
         "zhuojg-dataset/TargetImage/"  # Change this to your desired output directory
     )

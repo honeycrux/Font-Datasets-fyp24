@@ -20,7 +20,7 @@ rm -f casia-dataset-source/Gnt1.0TrainPart3.zip
 chmod -R 777 casia-dataset-source
 
 # Create target images
-python scripts/casia/step_0_create_target_images.py
+python -m scripts.casia.step_0_create_target_images
 
 # Create content images
-python scripts/casia/step_1_create_content_images_from_target_images.py
+python -m scripts.casia.step_1_create_content_images_from_target_images

@@ -11,4 +11,4 @@ git clone https://github.com/neumason/Chinese-Fonts-Dataset neumason-dataset-sou
 chmod -R 777 neumason-dataset-source
 
 # Create the neumason dataset structure
-python scripts/neumason/step_0_create_content_and_target_images.py
+python -m scripts.neumason.step_0_create_content_and_target_images

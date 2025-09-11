@@ -1,7 +1,7 @@
-from scripts.common.create_content_images_from_target_images import (
+from ..common.create_content_images_from_target_images import (
     create_content_images_from_target_images,
 )
-from scripts.common.delete_target_images_without_content_image import (
+from ..common.delete_target_images_without_content_image import (
     delete_target_images_without_content_image,
 )
 
@@ -9,7 +9,7 @@ from scripts.common.delete_target_images_without_content_image import (
 def main():
     content_image_dir = "zhuojg-dataset/ContentImage"
     target_image_dir = "zhuojg-dataset/TargetImage"
-    font_dir = "ttf/SourceHanSansSC-VF.ttf"
+    font_dir = "ttf/SourceHanSerifTC-VF.ttf"
     image_size = (128, 128)
     font_size = 100
 

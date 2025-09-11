@@ -171,7 +171,7 @@ def main():
     output_dir = "neumason-dataset/"
 
     # Make sure this font has all the characters you need
-    content_font_dir = "汉仪书宋二S.ttf"
+    content_font_dir = "汉仪书宋二S10000000000000000.ttf"
 
     # Remove duplicate or problematic fonts
     rejected_font_dirs = [

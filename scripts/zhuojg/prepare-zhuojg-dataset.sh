@@ -15,7 +15,7 @@ mkdir zhuojg-dataset
 chmod -R 777 zhuojg-dataset
 
 # Create target images
-python scripts/zhuojg/step_0_create_target_images.py
+python -m scripts.zhuojg.step_0_create_target_images
 
 # Create content images
-python scripts/zhuojg/step_1_create_content_images_from_target_images.py
+python -m scripts.zhuojg.step_1_create_content_images_from_target_images
