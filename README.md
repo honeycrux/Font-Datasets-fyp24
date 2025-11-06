@@ -6,7 +6,9 @@ This repository holds the dataset preparation scripts used to prepare the datase
 
 The scripts are used to prepare raw datasets into [a file structure usable by the FontDiffuser Classic Calligraphy project](https://github.com/honeycrux/FontDiffuser-Classic-Calligraphy/blob/main/README.md#data-construction-changes).
 
-This repository also holds datasets released by us inside the `releases/` directory, where the released files are stored with Git LFS. Note that `git clone` by default only downloads pointers for LFS files, not the actual files. The actual files can be downloaded directly from GitHub or with specific `git lfs` commands.
+There are also useful scripts for manual usage such listing file extensions or creating dataset summary. These scripts are in the `scripts/util` directory. See the files for their usage.
+
+This repository also holds datasets released by us inside the `releases/` directory, where the released files are stored with **Git LFS**. Note that `git clone` by default only downloads pointers for LFS files, not the actual files. The actual files can be downloaded directly from GitHub or with specific `git lfs` commands.
 
 Important: `LICENSE.txt` only applies to the contents of this repository, excluding the `releases/` directory. The datasets have separate Conditions of Use. Please consult each dataset's Conditions of Use before using them.
 
@@ -30,7 +32,14 @@ These datasets are used by the FYP24 group and are given a label in this reposit
 - License: MIT license
 - Conditions of Use: License and copyright notice (See https://choosealicense.com/licenses/mit/)
 
+Dataset summary:
+
+- Number of fonts: 19
+- Number of characters: 56916
+- Characters per font: Range 2985-3000 Mean 2995.58 SD 5.98
+
 Download and prepare dataset:
+
 ```sh
 sh scripts/fyp23/prepare-fyp23-dataset.sh
 ```
@@ -100,7 +109,14 @@ The dataset structure is explained as follows:
 - License: All rights reserved
 - Conditions of Use: Research purposes only, acknowledgement required (See https://nlpr.ia.ac.cn/databases/handwriting/Application_form.html)
 
+Dataset summary:
+
+- Number of fonts: 337
+- Number of characters: 1288010
+- Characters per font: Range 19-3864 Mean 3821.99 SD 258.36
+
 Download and prepare dataset:
+
 ```sh
 sh scripts/casia/prepare-casia-dataset.sh
 ```
@@ -113,7 +129,14 @@ sh scripts/casia/prepare-casia-dataset.sh
 - License: Apache-2.0 license
 - Conditions of Use: License and copyright notice, state changes (See https://choosealicense.com/licenses/apache-2.0/)
 
+Dataset summary:
+
+- Number of fonts: 19
+- Number of characters: 138499
+- Characters per font: Range 5990-9780 Mean 7289.42 SD 1078.03
+
 Download and prepare dataset:
+
 ```sh
 sh scripts/zhuojg/prepare-zhuojg-dataset.sh
 ```
@@ -126,7 +149,14 @@ sh scripts/zhuojg/prepare-zhuojg-dataset.sh
 - License: Unknown
 - Conditions of Use: Unknown
 
+Dataset summary:
+
+- Number of fonts: 179
+- Number of characters: 1433056
+- Characters per font: Range 918-9168 Mean 8005.90 SD 1305.65
+
 Download and prepare dataset:
+
 ```sh
 sh scripts/neumason/prepare-neumason-dataset.sh
 ```
@@ -156,6 +186,16 @@ The 19 target fonts used are: 851tegakizatsu, Baoli, Biaukai, Ching1, Ching5p, C
 Download manually: https://github.com/honeycrux/Font-Datasets-fyp24/blob/main/releases/annys-handwriting-dataset-source.zip
 
 The data is placed under the `content`/`data_*` subdirectories according to the training data file tree used by FYP23 models. Subdirectories `data_natural` and `data_messy` can be used interchangeably as the data directory. The two directories have the same set of characters, but `data_messy` is a messier version of `data_natural`.
+
+## Running Tests
+
+The dataset preparation scripts with important logic are tested.
+
+The tests can be run with the following command:
+
+```sh
+pytest tests/
+```
 
 ## FAQ
 
