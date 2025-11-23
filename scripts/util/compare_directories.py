@@ -5,6 +5,19 @@
 import filecmp
 from pathlib import Path
 
+import numpy as np
+from PIL import Image
+
+image_file_extensions = {".png", ".jpg", ".jpeg"}
+
+
+def images_are_equal(img1_path: Path, img2_path: Path) -> bool:
+    img1 = Image.open(img1_path).convert("RGB")
+    img2 = Image.open(img2_path).convert("RGB")
+    arr1 = np.frombuffer(img1.tobytes(), dtype=np.uint8)
+    arr2 = np.frombuffer(img2.tobytes(), dtype=np.uint8)
+    return np.array_equal(arr1, arr2)
+
 
 def compare_directories(
     dir1: str | Path,
@@ -29,9 +42,18 @@ def compare_directories(
     )
 
     # Files that are different
-    inner_differences.extend(
-        [(Path(dir1) / file, Path(dir2) / file) for file in dcmp.diff_files]
-    )
+    for file in dcmp.diff_files:
+        is_image_file = Path(file).suffix.lower() in image_file_extensions
+
+        path1 = Path(dir1) / file
+        path2 = Path(dir2) / file
+
+        if not is_image_file:
+            inner_differences.append((path1, path2))
+            continue
+
+        if not images_are_equal(path1, path2):
+            inner_differences.append((path1, path2))
 
     # Files that cannot be compared
     uncomparable_files.extend(

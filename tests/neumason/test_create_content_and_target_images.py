@@ -53,8 +53,8 @@ def output_dir(dataset_name: str):
 
     yield target_image_dir
 
-    # if target_image_dir.exists():
-    #     shutil.rmtree(target_image_dir)
+    if target_image_dir.exists():
+        shutil.rmtree(target_image_dir)
 
 
 @pytest.mark.parametrize(
